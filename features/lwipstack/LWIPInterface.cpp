@@ -68,7 +68,8 @@ static void add_dns_addr_to_dns_list_index(const u8_t addr_type, const u8_t inde
 #if LWIP_IPV4
     if (addr_type == IPADDR_TYPE_V4) {
         /* 8.8.8.8 google */
-        ip_addr_t ipv4_dns_addr = IPADDR4_INIT(0x08080808);
+        //ip_addr_t ipv4_dns_addr = IPADDR4_INIT(0x08080808); //default
+        ip_addr_t ipv4_dns_addr = IPADDR4_INIT(0xAC1E0001); //ONPREM
         dns_setserver(index, &ipv4_dns_addr, netif);
     }
 #endif
